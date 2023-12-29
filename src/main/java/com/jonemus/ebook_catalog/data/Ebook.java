@@ -16,18 +16,10 @@ public class Ebook {
         this.format = format;
     }
 
-    public boolean equals(String id) {
-        if (this.id.toString() == id) {
-            return true;
-        }
-        return false;
-    }
-
     public boolean equals(String author, String title, String format) {
         if (this.author.equals(author) && 
             this.title.equals(title) && 
             this.format.equals(format)) {
-                System.out.println("equals true");
             return true;
         } 
         return false;

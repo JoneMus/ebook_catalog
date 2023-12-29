@@ -1,6 +1,5 @@
 package com.jonemus.ebook_catalog.services;
 
-// import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -30,14 +29,12 @@ public class Ebook_service {
         return new_ebook;
     }
 
-    private boolean exists(String author, String title, String format) {
-  
+    private boolean exists(String author, String title, String format) { 
             for (Ebook eb : ebooks.get_ebooks()) {
                 if (eb.equals(author, title, format)) {
                     return true;
                 }     
             }
-
         return false;
     }
 
@@ -77,6 +74,13 @@ public class Ebook_service {
             ebook.get("title").toString() == "" || 
             ebook.get("format").toString() == ""
             ) {
+            return false;
+        }
+        else if (
+            ebook.get("author").toString().trim().isEmpty()|| 
+            ebook.get("title").toString().trim().isEmpty() || 
+            ebook.get("format").toString().trim().isEmpty()
+        ){
             return false;
         }
         return true;
